@@ -1,9 +1,9 @@
 package com.ensak;
 
-import com.ensak.entities.Client;
-import com.ensak.entities.Facture;
-import com.ensak.entities.LigneCommande;
-import com.ensak.entities.Product;
+import com.ensak.entities.facturation.Client;
+import com.ensak.entities.facturation.Facture;
+import com.ensak.entities.facturation.LigneCommande;
+import com.ensak.entities.facturation.Product;
 
 import java.time.LocalDate;
 
@@ -24,12 +24,12 @@ public class MainFacture {
         LigneCommande lc3 = new LigneCommande(23,5,p3);
         LigneCommande lc4 = new LigneCommande(24,8,p4);
 
-        facture.getCommandes().add(lc1);
-        facture.getCommandes().add(lc2);
-        facture.getCommandes().add(lc3);
-        facture.getCommandes().add(lc4);
-        facture.calculTotal();
+        facture.addCommande(lc1);
+        facture.addCommande(lc2);
+        facture.addCommande(lc3);
+        facture.addCommande(lc4);
 
+        facture.calculTotal();
         //Afficher le détail de la facture
         System.out.println(facture.toString());
 
@@ -38,8 +38,11 @@ public class MainFacture {
 
 
 
-
-        /*System.out.println("\t\t\t\t\t\t\t\t\t\tTotal = " +facture.calculTotal());
+        /*facture.getCommandes().add(lc1);
+        facture.getCommandes().add(lc2);
+        facture.getCommandes().add(lc3);
+        facture.getCommandes().add(lc4);
+        System.out.println("\t\t\t\t\t\t\t\t\t\tTotal = " +facture.calculTotal());
         System.out.println("===================================================================================");
         System.out.println("==================================Paiement de facture================================");
         System.out.println("Société XYZ");

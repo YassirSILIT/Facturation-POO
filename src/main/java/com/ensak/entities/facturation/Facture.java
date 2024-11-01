@@ -1,4 +1,4 @@
-package com.ensak.entities;
+package com.ensak.entities.facturation;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -75,6 +75,10 @@ public class Facture {
             totale = totale + lc.getQte()*lc.getProduct().getPrix();
         }
         return totale;
+    }
+
+    public void addCommande(LigneCommande ligneCommande){
+        commandes.add(ligneCommande);
     }
 
     @Override

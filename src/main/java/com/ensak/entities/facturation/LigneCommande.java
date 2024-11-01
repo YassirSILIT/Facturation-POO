@@ -1,4 +1,4 @@
-package com.ensak.entities;
+package com.ensak.entities.facturation;
 
 
 

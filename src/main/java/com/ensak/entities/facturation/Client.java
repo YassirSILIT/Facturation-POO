@@ -1,4 +1,4 @@
-package com.ensak.entities;
+package com.ensak.entities.facturation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -80,7 +80,9 @@ public class Client {
         this.tel = tel;
         this.email = email;
     }
-
+    public void addFacture(Facture f){
+        factures.add(f);
+    }
     @Override
     public String toString() {
         String detail = "";
